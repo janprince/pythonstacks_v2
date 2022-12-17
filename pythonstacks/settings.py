@@ -11,6 +11,11 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 import os
 from pathlib import Path
+import environ
+
+env = environ.Env()
+# reads .env file
+environ.Env.read_env()  # reads variables from .env files. Then we can use the os.environ
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,12 +25,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-2qy(%5@1bbb#gwsc6-@z!c+umcp8hg^kt)0)--)bomi84_+4t*'
+SECRET_KEY = os.environ["SECRET_KEY"]
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = True if os.environ["DEBUG"] == 'True' else False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["www.pythonstacks.com", 'pythonstacks.pythonanywhere.com', 'localhost']
 
 
 # Application definition
@@ -74,12 +79,25 @@ WSGI_APPLICATION = 'pythonstacks.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+if DEBUG:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': os.environ['DATABASE_ENGINE'],
+            'NAME': os.environ['DATABASE_NAME'],
+            'OPTIONS': {'init_command': "SET sql_mode='STRICT_TRANS_TABLES'", },
+            'USER': os.environ['DATABASE_USER'],
+            'PASSWORD': os.environ['DATABASE_PASSWORD'],
+            'HOST': os.environ['DATABASE_HOST'],
+            'PORT': os.environ['DATABASE_PORT']
+        }
+    }
 
 
 # Password validation
@@ -128,3 +146,9 @@ MEDIA_URL = '/media/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# Mailchimp Configs
+MAILCHIMP_API_KEY = os.environ["MAILCHIMP_API_KEY"]
+MAILCHIMP_DATA_CENTER = 'us2'
+MAILCHIMP_EMAIL_LIST_ID = 'd4d6ddd408'
