@@ -11,9 +11,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- Identity -->
-    <title>Homepage | PythonStacks</title>
-    <meta name="description" content="Mastering Python: Tips, Tricks, and Techniques for Effective Programming">
-    <meta name="author" content="Codings">
+    {% block title %}
+    {% endblock title %}
+
+    {% block meta %}
+    {% endblock meta %}
+
+    <meta name="author" content="Prince Jan">
     <link rel="shortcut icon" href="{% static 'main/assets/images/favicon.ico' %}" type="image/x-icon" />
 
     <!-- Vendor Style Sheet -->

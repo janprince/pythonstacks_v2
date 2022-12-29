@@ -35,6 +35,7 @@ class Post(models.Model):
     content = RichTextUploadingField()
     category = models.ForeignKey(Category, blank=False, related_name='posts', on_delete=models.CASCADE)
     pub_date = models.DateTimeField(default=timezone.now)
+    last_mod = models.DateTimeField(auto_now=True)
     likes = models.IntegerField(default=0)
     featured = models.BooleanField(default=False)
 

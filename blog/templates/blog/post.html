@@ -1,6 +1,27 @@
 {% extends 'main/base.html' %}
 {% load static %}
 
+{% block meta %}
+  <meta name="description" content="{{ post.meta_description }}">
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@PythonStacks" />
+  <meta name="twitter:title" content="{{ post.title }}" />
+  <meta name="twitter:description" content="{{ post.meta_description }}" />
+  {% if post.image %}<meta name="twitter:image" content="https://www.pythonstacks.com{{ post.image.url }}" />{% endif %}
+
+  <meta property="og:url" content="https://www.pythonstacks.com{{ post.get_absolute_url }}" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="{{ post.title }}" />
+  <meta property="og:description" content="{{ post.meta_description }}" />
+  {% if post.image %}<meta property="og:image" content="https://www.pythonstacks.com{{ post.image.url }}" />{% endif %}
+{% endblock meta %}
+
+{% block title %}
+  <title>{{ post.title }} | PythonStacks</title>
+{% endblock title %}
+
+
+
 {% block main_content %}
     <!-- Main -->
     <main id="main" class="shock-main">
@@ -20,7 +41,7 @@
 
               </h1>
               <p class="text-white h3 mt-2 fs-5 ">{{ post.meta_description }}</p>
-            <p class="text-white text-italic mt-5">Last Updated: {{ post.pub_date | date:"F d, Y" }}
+            <p class="text-white text-italic mt-5">Last Updated: {{ post.last_mod | date:"F d, Y" }}
             </div>
           </div>
           <!-- Image -->
