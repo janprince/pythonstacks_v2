@@ -18,7 +18,7 @@ class Category(models.Model):
     slug = models.SlugField(blank=True)
 
     def __str__(self):
-        return f'{self.tag}'
+        return f'{self.category}'
 
     def get_absolute_url(self):
         from django.urls import reverse

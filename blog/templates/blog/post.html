@@ -10,28 +10,22 @@
         <div class="banner">
           <div class="content-wrapper">
             <!-- Intro -->
-            <div class="extended-intro max-w-65 mb-25">
-              <h1 class="title white">
-                <span class="text-1 text-style-1 text-outline">Why design</span>
-                <span class="text-2 text-style-3 text-italic">matters to <mark class="animated-underline primary">our lives</mark> ?</span>
+            <div class="extended-intro max-w-65">
+              <h1 class="title white mb-3">
+<!--                <span class="text-1 text-style-1 text-outline">Why design</span>-->
+<!--                <span class="text-2 text-style-3 text-italic">matters to <mark class="animated-underline primary">our lives</mark> ?</span>-->
+
+                <span class="text-style-3 mt-5 d-none d-md-block" style="font-size: 42px;">{{ post.title }}</span>
+                <span class="text-style-3 mt-5 d-md-none" style="font-size: 35px;">{{ post.title }}</span>
+
               </h1>
-            </div>
-          </div>
-          <!-- Breadcrumb -->
-          <div class="banner-breadcrumb absolute">
-            <div class="item">
-              <a href="#" class="link text-style-11 white-75 white-hover">Home<i class="fa-solid fa-angles-right icon"></i></a>
-            </div>
-            <div class="item">
-              <a href="#" class="link text-style-11 white-75 white-hover">Blog<i class="fa-solid fa-angles-right icon"></i></a>
-            </div>
-            <div class="item">
-              <span class="text text-style-11 white-50">Why design matters to our lives?</span>
+              <p class="text-white h3 mt-2 fs-5 ">{{ post.meta_description }}</p>
+            <p class="text-white text-italic mt-5">Last Updated: {{ post.pub_date | date:"F d, Y" }}
             </div>
           </div>
           <!-- Image -->
           <div class="image-wrapper">
-            <img src="{% static 'main/assets/images/jpg/a-15.jpg' %}" class="image vh-100 fit-cover" alt="This is an example description for this item." />
+            <img src="{% if post.image %}{{post.image.url}}{%else%}{% static 'main/assets/images/jpg/a-15.jpg' %}{% endif %}" class="image fit-cover vh-75" alt="This is an example description for this item." />
           </div>
           <!-- Overlay -->
           <div class="overlay black-75"></div>
@@ -42,118 +36,11 @@
       <section class="shock-section pt-5 pb-5">
         <div class="container max-w-85">
           <div class="row g-5">
-            <div class="col-12 col-md-8 mx-auto">
+            <div class="col-12 col-md-10 col-lg-7 mx-auto">
               <div class="content max-w-100 scheme-1">
 
-                <div style="font-size: 16px; font-family: Poppins">
-                  <!-- Paragraph -->
-                  <h3 class="mt-0">After all, why is design important?</h3>
-                  <p>Design is a broad concept that represents the process of creating products based on technical and aesthetic excellence, with the aim of <mark class="animated-underline accent text-black">solving problems</mark> and adding value. Good design delivers the best possible user experience.</p>
-                  <p>Design is a thought process that comprises the creation of products to solve problems, including functional and <strong>aesthetic aspects</strong>.</p>
-                  <p>This is the most objective definition possible for the concept, which encompasses numerous forms of idealization, conception, development and specification of objects.</p>
-
-                  <!-- Paragraph -->
-                  <h3>Some of the types of designs that exist</h3>
-                  <ul>
-                    <li><strong>Graphic design</strong> is the use of images, texts and illustrations for visual communication.</li>
-                    <li><strong>Game design</strong> focused on the development and <a href="#"><u>creation of games</u></a>.</li>
-                    <li><strong>Design thinking</strong> can be defined as the way of design thinking applied to the solution of challenges and innovation in business:
-                      <ul>
-                        <li><u>Immersion:</u> research and understanding of the problem and its context.</li>
-                        <li><u>Ideation:</u> generating ideas as a team from the data collected.</li>
-                        <li><u>Prototyping:</u> creating prototypes that validate learned content.</li>
-                      </ul>
-                    </li>
-                    <li><strong>Product design</strong>, works with the <mark class="animated-underline accent text-black">creation of objects</mark> focused on solving problems.</li>
-                    <li><strong>Web design</strong> is the area that covers the creation of interfaces for software, websites, platforms and applications.</li>
-                    <li><strong>Interior design</strong> is the area responsible for planning, creating and executing indoor projects.</li>
-                  </ul>
-
-                  <!-- Paragraph -->
-                  <h3>The history of design</h3>
-                  <p>If we take the term literally, our ancestors already practiced design when creating their chipped stone tools. However, to facilitate understanding, let's place the concept in our age.</p>
-                  <p>In this case, who deserves the title of first designer in history is <a href="#"><u>Leonardo Da Vinci</u></a>.</p>
-                  <p>The genius used design principles to design visionary inventions that revolutionized humanity and propelled science forward.</p>
-
-                  <!-- Image -->
-                  <figure class="figure">
-                    <img src="{% static 'main/assets/images/jpg/a-11.jpg' %}" class="image shadow rounded" alt="Image name">
-                    <figcaption class="figure-caption text-center">A caption for the above image.</figcaption>
-                  </figure>
-
-                  <!-- Paragraph -->
-                  <p>Design is fundamental because it optimizes human creation, combining aesthetics with functionality. It is a process capable of adding value and generating more efficient, comfortable, safe and <mark class="animated-underline accent text-black">beautiful solutions</mark>.</p>
-                  <p>Proof of this is that common sense equates design with something beautiful and well done. For companies, design is one of the key success factors, from <strong>product development</strong> to customer value delivery.</p>
-
-                  <!-- Blockquote -->
-                  <div class="blockquote mx-auto">
-                    <blockquote class="blockquote-body text-style-11 black">
-                      <p>"The design is not just what it looks like. The design is how it works".</p>
-                    </blockquote>
-                    <div class="blockquote-footer">
-                      <cite title="Source Title">Steve Jobs / Apple Founder</cite>
-                    </div>
-                    <i class="fas fa-quote-right overlay-icon gray-50"></i>
-                  </div>
-
-                  <!-- Paragraph -->
-                  <p>It's not just about enchanting the product's look, but thinking about the entire process of use and arriving at the best possible solution.</p>
-                  <p>For this, the designer transforms ideas into products that actually solve problems, designed and executed in the smallest details.</p>
-                  <h3>Is design considered an art?</h3>
-                  <p>Personally, I usually say that design is the bridge between what already exists and what is possible to imagine and do.</p>
-                  <p>Therefore, it is such a complex concept, which goes through art, business, culture, aesthetics, behavior and technology.</p>
-
-                  <!-- Gallery -->
-                  <div class="block-section">
-                    <div class="gallery stretched-side has-gap">
-                      <div class="bricklayer" data-columns="3">
-                        <a href="{% static 'main/assets/images/jpg/d-1.jpg' %}" class="item lightbox-link">
-                          <div class="image-wrapper shadow rounded hover-zoom-rotate">
-                            <div class="overlay black-50"></div>
-                            <img src="{% static 'main/assets/images/jpg/d-1.jpg' %}" class="image rounded shadow" alt="This is an example description for this item." />
-                          </div>
-                        </a>
-                        <a href="{% static 'main/assets/images/jpg/d-2.jpg' %}" class="item lightbox-link">
-                          <div class="image-wrapper shadow rounded hover-zoom-rotate">
-                            <div class="overlay black-50"></div>
-                            <img src="{% static 'main/assets/images/jpg/d-2.jpg' %}" class="image rounded shadow" alt="This is an example description for this item." />
-                          </div>
-                        </a>
-                        <!-- Video -->
-                        <a href="https://vimeo.com/222990241" class="item active lightbox-link">
-                          <i class="fa-solid fa-circle-play gallery-icon white floating-item"></i>
-                          <div class="image-wrapper shadow rounded hover-zoom-rotate">
-                            <div class="overlay black-50"></div>
-                            <img src="{% static 'main/assets/images/jpg/d-3.jpg' %}" class="image rounded shadow" alt="This is an example description for this item." />
-                          </div>
-                        </a>
-                        <a href="{% static 'main/assets/images/jpg/d-4.jpg' %}" class="item lightbox-link">
-                          <div class="image-wrapper shadow rounded hover-zoom-rotate">
-                            <div class="overlay black-50"></div>
-                            <img src="{% static 'main/assets/images/jpg/d-4.jpg' %}" class="image rounded shadow" alt="This is an example description for this item." />
-                          </div>
-                        </a>
-                        <a href="{% static 'main/assets/images/jpg/d-5.jpg' %}" class="item lightbox-link">
-                          <div class="image-wrapper shadow rounded hover-zoom-rotate">
-                            <div class="overlay black-50"></div>
-                            <img src="{% static 'main/assets/images/jpg/d-5.jpg' %}" class="image rounded shadow" alt="This is an example description for this item." />
-                          </div>
-                        </a>
-                        <a href="{% static 'main/assets/images/jpg/d-6.jpg' %}" class="item lightbox-link">
-                          <div class="image-wrapper shadow rounded hover-zoom-rotate">
-                            <div class="overlay black-50"></div>
-                            <img src="{% static 'main/assets/images/jpg/d-6.jpg' %}" class="image rounded shadow" alt="This is an example description for this item." />
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Paragraph -->
-                  <h3>Can you already see design with a new look?</h3>
-                  <p>As we have seen, it is not a simple term, as it concerns a process, science, profession and even attributes of everything we know.</p>
-                  <p>No wonder you are surrounded by examples of design: the page of this blog, the decoration of your office, the model of your shirt and even the shape of your chair. That's why design is so important.</p>
-                  <p>It allows the world we imagine to become reality in the best possible way.</p>
+                <div style="font-size: 17px; font-family: 'Source Sans Pro', sans-serif; color: #404447">
+                 {{ post.content | safe }}
                 </div>
 
                 <!-- Post navigation-->
@@ -272,150 +159,62 @@
                 <!-- Post reference -->
                 <div class="block-section">
                   <div class="post-reference" data-lax="inertia-top">
-                    <div class="post-reference-container">
-                      <div class="image-wrapper">
-                        <img src="{% static 'main/assets/images/png/b-2.png' %}" alt="Image name" class="image">
-                      </div>
-                      <div class="text-wrapper">
-                        <h5 class="title"><mark class="animated-underline primary-50">John Young</mark></h5>
-                        <p class="description">Co-founder of the Company. The Wall Street Journal named him the biggest influencer on the web.</p>
-                        <cite title="Source Title">Author of the article "Why design matters to our lives".</cite>
-                      </div>
-                    </div>
+                    <div class="d-none d-md-block">
+                      <a href="https://click.linksynergy.com/fs-bin/click?id=w7*S3fGR7tg&offerid=1074652.454&subid=0&type=4">
+                    <IMG border="0"   alt="Udemy APAC" src="{% static 'main/assets/images/png/ad_wide.png' %}">
+                      </a>
+                  </div>
                   </div>
                 </div>
 
                 <!-- Comments -->
                 <div class="comments">
-                  <h2>Comments <span class="text-outline">(16)</span></h2>
+                  <h2>Comments <span class="text-outline">({{ comments.count }})</span></h2>
                   <div class="comments-wrapper">
+                    {% for comment in comments %}
                     <!-- Comment -->
                     <div id="comment-1" class="comment">
                       <div class="comment-metadata">
                         <div class="comment-author">
                           <div class="author-photo">
-                            <img src="{% static 'main/assets/images/jpg/p-1.jpg' %}" class="image shadow" alt="Image name">
+                            <img src="{% static 'main/assets/images/png/profile.png' %}" class="image shadow" alt="Image name">
                           </div>
-                          <h5 class="author-name">Alice Johnson</h5>
+                          <h5 class="author-name">{{ comment.name }}</h5>
                         </div>
                         <span class="comment-date">
                           <i class="icon fas fa-calendar-alt"></i>
-                          <span class="text">14 days ago</span>
+                          <span class="text">{{ comment.created_on | date:"F d, Y" }}</span>
                         </span>
                       </div>
                       <div class="comment-content">
-                        <p>Hello, this theme is really amazing! It has many features that make my job as a developer much easier. I'm sure my clients will love to see the final result of this project.</p>
-                      </div>
-                      <div class="comment-action">
-                        <!-- Button -->
-                        <a href="#comment-1" class="button simple">
-                          <span class="button-text black primary-hover">Reply comment</span>
-                          <i class="fa-solid fa-arrow-right button-icon black primary-hover"></i>
-                        </a>
-                        <i class="fa-solid fa-heart like-icon active primary"></i>
+                        <p>{{ comment.comment | linebreaks }}</p>
                       </div>
                     </div>
-                    <!-- Comment -->
-                    <div id="comment-2" class="comment">
-                      <div class="comment-metadata">
-                        <div class="comment-author">
-                          <div class="author-photo">
-                            <img src="{% static 'main/assets/images/jpg/p-1.jpg' %}" class="image shadow" alt="Image name">
-                          </div>
-                          <h5 class="author-name">Kaled Ahmad</h5>
-                        </div>
-                        <span class="comment-date">
-                          <i class="icon fas fa-calendar-alt"></i>
-                          <span class="text">17 days ago</span>
-                        </span>
-                      </div>
-                      <div class="comment-content">
-                        <p>مرحبًا ، هذا المظهر رائع حقًا! يحتوي على العديد من الميزات التي تجعل عملي كمطور أسهل بكثير. أنا متأكد من أن عملائي سيحبون رؤية موقع الويب الذي أقوم ببنائه لهم.</p>
-                      </div>
-                      <div class="comment-action">
-                        <!-- Button -->
-                        <a href="#comment-2" class="button simple">
-                          <span class="button-text black primary-hover">Reply comment</span>
-                          <i class="fa-solid fa-arrow-right button-icon black primary-hover"></i>
-                        </a>
-                        <i class="fa-solid fa-heart like-icon primary"></i>
-                      </div>
-                    </div>
-                    <!-- Comment -->
-                    <div id="comment-3" class="comment">
-                      <div class="comment-metadata">
-                        <div class="comment-author">
-                          <div class="author-photo">
-                            <img src="{% static 'main/assets/images/jpg/p-1.jpg' %}" class="image shadow" alt="Image name">
-                          </div>
-                          <h5 class="author-name">Laura Garcia</h5>
-                        </div>
-                        <span class="comment-date">
-                          <i class="icon fas fa-calendar-alt"></i>
-                          <span class="text">26 days ago</span>
-                        </span>
-                      </div>
-                      <div class="comment-content">
-                        <p>Hola, este tema es realmente increíble! Tiene muchas características que hacen que mi trabajo como desarrollador sea mucho más fácil. Estoy seguro de que a mis clientes les encantará ver el sitio web que estoy creando para ellos.</p>
-                      </div>
-                      <div class="comment-action">
-                        <!-- Button -->
-                        <a href="#comment-3" class="button simple">
-                          <span class="button-text black primary-hover">Reply comment</span>
-                          <i class="fa-solid fa-arrow-right button-icon black primary-hover"></i>
-                        </a>
-                        <i class="fa-solid fa-heart like-icon primary"></i>
-                      </div>
-                    </div>
-                    <!-- Comment -->
-                    <div id="comment-4" class="comment">
-                      <div class="comment-metadata">
-                        <div class="comment-author">
-                          <div class="author-photo">
-                            <img src="{% static 'main/assets/images/jpg/p-1.jpg' %}" class="image shadow" alt="Image name">
-                          </div>
-                          <h5 class="author-name">Dimitri Smirnov</h5>
-                        </div>
-                        <span class="comment-date">
-                          <i class="icon fas fa-calendar-alt"></i>
-                          <span class="text">14 days ago</span>
-                        </span>
-                      </div>
-                      <div class="comment-content">
-                        <p>Привет, эта тема действительно потрясающая! Он имеет множество функций, которые значительно облегчают мою работу как разработчика. Я уверен, что моим клиентам понравится конечный результат этого проекта.</p>
-                      </div>
-                      <div class="comment-action">
-                        <!-- Button -->
-                        <a href="#comment-4" class="button simple">
-                          <span class="button-text black primary-hover">Reply comment</span>
-                          <i class="fa-solid fa-arrow-right button-icon black primary-hover"></i>
-                        </a>
-                        <i class="fa-solid fa-heart like-icon primary"></i>
-                      </div>
-                    </div>
+                    {% endfor %}
                   </div>
                   <!-- Form -->
                   <div class="form-area scheme-1 primary">
                     <h3>Leave a reply</h3>
-                    <p>To write a comment you need to <a href="#" target="_blank"><u>login</u></a> to your account.</p>
-                    <form class="form-fields needs-validation" novalidate="novalidate">
+<!--                    <p>To write a comment you need to <a href="#" target="_blank"><u>login</u></a> to your account.</p>-->
+                    <form class="form-fields needs-validation" method="post">
+                      {% csrf_token %}
+                      <div class="form-row row">
+                        <div class="form-col col-6">
+                          <input type="text" name="name"  placeholder="Name"  class="form-control rounded-3" required/>
+                          <div class="invalid-feedback">Please enter your name.</div>
+                        </div>
+                        <div class="form-col col-6">
+                          <input type="text" name="email"  placeholder="Email"  class="form-control rounded-3" required/>
+                          <div class="invalid-feedback">Please enter your name.</div>
+                        </div>
+                      </div>
                       <div class="form-row row">
                         <div class="form-col col-12">
-                          <textarea class="form-control rounded-3 form-textarea" id="InputCompactExampleMessage" rows="3" placeholder="Comment" required="required"></textarea>
+                          <textarea class="form-control rounded-3 form-textarea" id="InputCompactExampleMessage" rows="3" name="comment" placeholder="Comment" required="required"></textarea>
                           <div class="invalid-feedback">Please type something to post a comment.</div>
                         </div>
                       </div>
-                      <div class="form-row row">
-                        <div class="form-col col-12">
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" required="required">
-                            <label class="form-label form-check-label">
-                              I agree to the <a href="#your-link" class="link black primary-hover"><u>terms of use</u>.</a>
-                            </label>
-                            <div class="invalid-feedback">Please accept the terms to continue.</div>
-                          </div>
-                        </div>
-                      </div>
+
                       <div class="form-row row">
                         <div class="form-col col-12">
                           <!-- Button -->
@@ -431,46 +230,13 @@
               </div>
             </div>
             <!-- Sidebar -->
-            <div class="col-12 col-md-3 mx-auto">
+            <div class="col-12 col-lg-3 mx-auto">
               <aside class="shock-sidebar top-sidebar scheme-1">
-                <!-- Gallery -->
-                <div class="sidebar-block">
-                  <div class="gallery">
-                    <div class="row g-1">
-                      <div class="col-6">
-                        <a href="{% static 'main/assets/images/png/a-1.png' %}" class="item lightbox-link hover-opacity">
-                          <div class="image-wrapper">
-                            <div class="overlay has-border rounded black"></div>
-                            <img src="{% static 'main/assets/images/png/a-1.png' %}" class="image invert-color p-1 fit-cover" alt="This is an example description for this item." />
-                          </div>
-                        </a>
-                      </div>
-                      <div class="col-6">
-                        <a href="{% static 'main/assets/images/png/a-2.png' %}" class="item lightbox-link hover-opacity">
-                          <div class="image-wrapper">
-                            <div class="overlay has-border rounded black"></div>
-                            <img src="{% static 'main/assets/images/png/a-2.png' %}" class="image invert-color p-1 fit-cover" alt="This is an example description for this item." />
-                          </div>
-                        </a>
-                      </div>
-                      <div class="col-6">
-                        <a href="{% static 'main/assets/images/png/a-3.png' %}" class="item lightbox-link hover-opacity">
-                          <div class="image-wrapper">
-                            <div class="overlay has-border rounded black"></div>
-                            <img src="{% static 'main/assets/images/png/a-3.png' %}" class="image invert-color p-1 fit-cover" alt="This is an example description for this item." />
-                          </div>
-                        </a>
-                      </div>
-                      <div class="col-6">
-                        <a href="{% static 'main/assets/images/png/a-4.png' %}" class="item lightbox-link hover-opacity">
-                          <div class="image-wrapper">
-                            <div class="overlay has-border rounded black"></div>
-                            <img src="{% static 'main/assets/images/png/a-4.png' %}" class="image invert-color p-1 fit-cover" alt="This is an example description for this item." />
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
+                <!-- AD -->
+                <div class="sidebar-block text-center">
+                  <a href="https://click.linksynergy.com/fs-bin/click?id=w7*S3fGR7tg&offerid=1074652.454&subid=0&type=4">
+                    <IMG border="0" class="img-fluid"  alt="Udemy APAC" src="{% static 'main/assets/images/jpg/eth-min.jpg' %}">
+                  </a>
                 </div>
               </aside>
               <aside class="shock-sidebar scheme-1" data-sticky="100">
@@ -490,80 +256,24 @@
                     </form>
                   </div>
                 </div>
-                <!-- List -->
-                <div class="sidebar-block">
-                  <h5 class="title">Main categories</h5>
-                  <ul class="icon-list has-counter scheme-1 primary">
-                    <li>
-                      <a href="#your-link" class="link"><img class="image-icon active" src="{% static 'main/assets/svg/leaf-outline.svg' %}" alt="Icon name" data-shock-icon="32" />  Environment</a>
-                      <span class="counter-line"></span>
-                      <span class="counter-number">32</span>
-                    </li>
-                    <li>
-                      <a href="#your-link" class="link"><img class="image-icon active" src="{% static 'main/assets/svg/calendar-outline.svg' %}" alt="Icon name" data-shock-icon="32" />  Events</a>
-                      <span class="counter-line"></span>
-                      <span class="counter-number">76</span>
-                    </li>
-                    <li>
-                      <a href="#your-link" class="link"><img class="image-icon active" src="{% static 'main/assets/svg/cafe-outline.svg' %}" alt="Icon name" data-shock-icon="32" />  Technology</a>
-                      <span class="counter-line"></span>
-                      <span class="counter-number">45</span>
-                    </li>
-                    <li>
-                      <ul class="icon-list">
-                        <li>
-                          <a href="#your-link" class="link"><img class="image-icon active" src="{% static 'main/assets/svg/bug-outline.svg' %}" alt="Icon name" data-shock-icon="32" />  Computing</a>
-                          <span class="counter-line"></span>
-                          <span class="counter-number">30</span>
-                        </li>
-                        <li>
-                          <a href="#your-link" class="link"><img class="image-icon active" src="{% static 'main/assets/svg/planet-outline.svg' %}" alt="Icon name" data-shock-icon="32" />  Programming</a>
-                          <span class="counter-line"></span>
-                          <span class="counter-number">58</span>
-                        </li>
-                        <li>
-                          <a href="#your-link" class="link"><img class="image-icon active" src="{% static 'main/assets/svg/build-outline.svg' %}" alt="Icon name" data-shock-icon="32" />  Engineering</a>
-                          <span class="counter-line"></span>
-                          <span class="counter-number">63</span>
-                        </li>
-                      </ul>
-                    </li>
-                    <li>
-                      <a href="#your-link" class="link"><img class="image-icon active" src="{% static 'main/assets/svg/bulb-outline.svg' %}" alt="Icon name" data-shock-icon="32" />  Innovation</a>
-                      <span class="counter-line"></span>
-                      <span class="counter-number">98</span>
-                    </li>
-                    <li>
-                      <a href="#your-link" class="link"><img class="image-icon active" src="{% static 'main/assets/svg/heart-outline.svg' %}" alt="Icon name" data-shock-icon="32" />  Social</a>
-                      <span class="counter-line"></span>
-                      <span class="counter-number">75</span>
-                    </li>
-                  </ul>
+                <!-- AD -->
+                <div class="sidebar-block text-center">
+                  <a href="https://click.linksynergy.com/fs-bin/click?id=w7*S3fGR7tg&offerid=1074652.454&subid=0&type=4">
+                    <IMG border="0" class="img-fluid"  alt="Udemy APAC" src="{% static 'main/assets/images/png/ad.png' %}">
+                  </a>
                 </div>
                 <!-- Tag cloud -->
                 <div class="sidebar-block">
-                  <h5 class="title">Tag cloud</h5>
+                  <h5 class="title">Category Cloud</h5>
                   <div class="tag-cloud">
-                    <a href="#your-link" class="link">
+                    {% for cat in categories %}
+                      <a href="#your-link" class="link">
                       <span class="badge outline gray-50 primary-hover">
-                        <span class="badge-text gray white-hover">Environment</span>
+                        <span class="badge-text gray white-hover">{{ cat.category }}</span>
                       </span>
                     </a>
-                    <a href="#your-link" class="link">
-                      <span class="badge outline gray-50 primary-hover">
-                        <span class="badge-text gray white-hover">Events</span>
-                      </span>
-                    </a>
-                    <a href="#your-link" class="link">
-                      <span class="badge outline gray-50 primary-hover">
-                        <span class="badge-text gray white-hover">Technology</span>
-                      </span>
-                    </a>
-                    <a href="#your-link" class="link">
-                      <span class="badge outline gray-50 primary-hover">
-                        <span class="badge-text gray white-hover">Web</span>
-                      </span>
-                    </a>
+                    {% endfor %}
+
                     <a href="#your-link" class="link">
                       <span class="badge outline gray-50 primary-hover">
                         <span class="badge-text gray white-hover">Mobile</span>
@@ -587,36 +297,6 @@
                     <a href="#your-link" class="link">
                       <span class="badge outline gray-50 primary-hover">
                         <span class="badge-text gray white-hover">Artificial</span>
-                      </span>
-                    </a>
-                    <a href="#your-link" class="link">
-                      <span class="badge outline gray-50 primary-hover">
-                        <span class="badge-text gray white-hover">Intelligence</span>
-                      </span>
-                    </a>
-                    <a href="#your-link" class="link">
-                      <span class="badge outline gray-50 primary-hover">
-                        <span class="badge-text gray white-hover">Engineering</span>
-                      </span>
-                    </a>
-                    <a href="#your-link" class="link">
-                      <span class="badge outline gray-50 primary-hover">
-                        <span class="badge-text gray white-hover">Innovation</span>
-                      </span>
-                    </a>
-                    <a href="#your-link" class="link">
-                      <span class="badge outline gray-50 primary-hover">
-                        <span class="badge-text gray white-hover">Social</span>
-                      </span>
-                    </a>
-                    <a href="#your-link" class="link">
-                      <span class="badge outline gray-50 primary-hover">
-                        <span class="badge-text gray white-hover">Fashion</span>
-                      </span>
-                    </a>
-                    <a href="#your-link" class="link">
-                      <span class="badge outline gray-50 primary-hover">
-                        <span class="badge-text gray white-hover">Product</span>
                       </span>
                     </a>
                   </div>
@@ -646,173 +326,47 @@
         <div class="container">
           <!-- Posts -->
           <div class="row g-4">
-            <div class="col-12 col-md-6 col-lg-4">
-              <div class="card outline parent bg-color black-10">
-                <!-- Icon -->
-                <div class="sticky-post-icon primary">
-                  <i class="fas fa-thumbtack icon white"></i>
-                </div>
-                <!-- Label -->
-                <span class="label-vertical to-bottom-right-out hover-show">
-                  <span class="label-line gray"></span>
-                  <span class="label-text gray"><i class="icon fas fa-user-circle"></i> By John Young</span>
-                </span>
-                <div class="card-body">
-                  <h3 class="title text-style-11 black">Why design<br> matters to our lives?</h3>
-                  <p class="description">Design is a broad concept that represents the process of creating products based on technical and aesthetic excellence ...</p>
-                  <hr class="gray-25">
-                  <!-- Tag Cloud -->
-                  <div class="tag-cloud">
-                    <a href="#your-link" class="link">
-                      <span class="badge outline gray-50 primary-hover">
-                        <span class="badge-text gray white-hover">5 days ago</span>
-                      </span>
-                    </a>
-                    <a href="#your-link" class="link">
-                      <span class="badge outline gray-50 primary-hover">
-                        <span class="badge-text gray white-hover">Environment</span>
-                      </span>
-                    </a>
+            {% for post in posts %}
+              <div class="col-12 col-md-6 col-lg-4">
+                <div class="card parent">
+                  <!-- Label -->
+                  <span class="label-vertical to-bottom-right-out hover-show">
+                    <span class="label-line gray"></span>
+                    <span class="label-text gray"><i class="icon fas fa-user-circle"></i> By Laura Garcia</span>
+                  </span>
+                  <div class="card-body">
+                    <h3 class="title text-style-11 black">{{ post.title }}</h3>
+                    <p class="description">{{ post.meta_description }}</p>
+                    <hr class="gray-25">
+                    <!-- Tag Cloud -->
+                    <div class="tag-cloud">
+                      <a href="#your-link" class="link">
+                        <span class="badge outline gray-50 primary-hover">
+                          <span class="badge-text gray white-hover">14 days ago</span>
+                        </span>
+                      </a>
+                      <a href="#your-link" class="link">
+                        <span class="badge outline gray-50 primary-hover">
+                          <span class="badge-text gray white-hover">Events</span>
+                        </span>
+                      </a>
+                    </div>
                   </div>
+                  <!-- Link -->
+                  <a href="{% url 'blog:detail' post.slug %}" class="full-link">
+                    {% if post.image %}
+                      <div class="overlay shadow magnetic-effect hover-show bg-image" data-bg-image="{{ post.image.url }}"></div>
+                    {% else %}
+                      <div class="overlay shadow magnetic-effect hover-show bg-image" data-bg-image="{% static 'main/assets/images/jpg/a-7.jpg' %}"></div>
+                    {% endif %}
+                  </a>
                 </div>
-                <!-- Link -->
-                <a href="#your-link" class="full-link">
-                  <div class="overlay shadow magnetic-effect hover-show bg-image" data-bg-image="{% static 'main/assets/images/jpg/a-9.jpg' %}"></div>
-                </a>
               </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4">
-              <div class="card parent">
-                <!-- Label -->
-                <span class="label-vertical to-bottom-right-out hover-show">
-                  <span class="label-line gray"></span>
-                  <span class="label-text gray"><i class="icon fas fa-user-circle"></i> By Laura Garcia</span>
-                </span>
-                <div class="card-body">
-                  <h3 class="title text-style-11 black">How to become a<br> successful web designer?</h3>
-                  <p class="description">You must have the technical prowess required to create functional websites, as well as the artistic talent to build compelling designs ...</p>
-                  <hr class="gray-25">
-                  <!-- Tag Cloud -->
-                  <div class="tag-cloud">
-                    <a href="#your-link" class="link">
-                      <span class="badge outline gray-50 primary-hover">
-                        <span class="badge-text gray white-hover">14 days ago</span>
-                      </span>
-                    </a>
-                    <a href="#your-link" class="link">
-                      <span class="badge outline gray-50 primary-hover">
-                        <span class="badge-text gray white-hover">Events</span>
-                      </span>
-                    </a>
-                  </div>
-                </div>
-                <!-- Link -->
-                <a href="#your-link" class="full-link">
-                  <div class="overlay shadow magnetic-effect hover-show bg-image" data-bg-image="{% static 'main/assets/images/jpg/a-7.jpg' %}"></div>
-                </a>
-              </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4">
-              <div class="card parent">
-                <!-- Label -->
-                <span class="label-vertical to-bottom-right-out hover-show">
-                  <span class="label-line gray"></span>
-                  <span class="label-text gray"><i class="icon fas fa-user-circle"></i> By Alice Johnson</span>
-                </span>
-                <div class="card-body">
-                  <h3 class="title text-style-11 black">The best WordPress themes according to experts.</h3>
-                  <p class="description">We compare themes with the best consistency of design, performance and friendly support so you can't go wrong when choosing ...</p>
-                  <hr class="gray-25">
-                  <!-- Tag Cloud -->
-                  <div class="tag-cloud">
-                    <a href="#your-link" class="link">
-                      <span class="badge outline gray-50 primary-hover">
-                        <span class="badge-text gray white-hover">17 days ago</span>
-                      </span>
-                    </a>
-                    <a href="#your-link" class="link">
-                      <span class="badge outline gray-50 primary-hover">
-                        <span class="badge-text gray white-hover">Technology</span>
-                      </span>
-                    </a>
-                  </div>
-                </div>
-                <!-- Link -->
-                <a href="#your-link" class="full-link">
-                  <div class="overlay shadow magnetic-effect hover-show bg-image" data-bg-image="{% static 'main/assets/images/jpg/a-15.jpg' %}"></div>
-                </a>
-              </div>
-            </div>
+            {% endfor %}
           </div>
         </div>
       </section>
 
-      <!-- Newsletter -->
-      <section class="shock-section has-overlay pt-5 pb-5 bg-image bg-fixed" data-bg-image="{% static 'main/assets/images/jpg/a-41.jpg' %}">
-        <div class="container max-w-85">
-          <div class="row">
-            <div class="col-12 col-md-6 align-h-center align-v-center">
-              <!-- Intro -->
-              <div class="side-intro">
-                <h2 class="title text-style-5">
-                  <span class="text-1 text-outline white-75">Subscribe now</span>
-                  <span class="text-2 text-italic white">to our <mark class="animated-underline primary">newsletter</mark> !</span>
-                </h2>
-                <div class="description gray">
-                  <p>Subscribe to our newsletter and follow our content closely.<br>Receive news based on what has to do with you.</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-md-6 align-h-center align-v-center">
-              <!-- Form -->
-              <div class="form-area scheme-2 primary">
-                <form class="form-fields needs-validation" novalidate="novalidate">
-                  <div class="form-row row">
-                    <div class="form-col form-floating col-12 col-md-6">
-                      <input id="InputFloatingName" class="form-control" type="text" placeholder="Name" required="required">
-                      <label for="InputFloatingName" class="form-label">Name</label>
-                      <div class="invalid-feedback">Please enter your name.</div>
-                      <div class="valid-feedback">Looks good.</div>
-                    </div>
-                    <div class="form-col form-floating col-12 col-md-6">
-                      <input id="InputFloatingEmail" class="form-control" type="email" placeholder="name@example.com" required="required">
-                      <label for="InputFloatingEmail" class="form-label">Email</label>
-                      <div class="invalid-feedback">Please enter a valid email address.</div>
-                      <div class="valid-feedback">Looks good.</div>
-                    </div>
-                  </div>
-                  <div class="form-row row">
-                    <div class="form-col col-12">
-                      <div class="form-check">
-                        <input id="InputCheckbox" class="form-check-input" type="checkbox" required="required">
-                        <label class="form-label form-check-label" for="InputCheckbox">
-                          I agree to the <a href="#your-link" class="link white primary-hover"><u>terms of use</u>.</a>
-                        </label>
-                        <div class="invalid-feedback">Please accept the terms to continue.</div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="form-row row">
-                    <div class="form-col col-12">
-                      <!-- Button -->
-                      <button class="button arrow-button next scheme-2 primary">
-                        <span class="arrow">
-                          <span class="item"></span>
-                          <span class="item"></span>
-                        </span>
-                        <span class="line"></span>
-                        <span class="text">SUBSCRIBE</span>
-                      </button>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Overlay -->
-        <div class="overlay black-75"></div>
-      </section>
 
     </main>
 

@@ -30,7 +30,7 @@ SECRET_KEY = os.environ["SECRET_KEY"]
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True if os.environ["DEBUG"] == 'True' else False
 
-ALLOWED_HOSTS = ["www.pythonstacks.com", 'pythonstacks.pythonanywhere.com', '127.0.0.1']
+ALLOWED_HOSTS = ["www.pythonstacks.com", 'pythonstacks.pythonanywhere.com', '127.0.0.1', '192.168.1.147']
 
 
 # Application definition
