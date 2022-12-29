@@ -20,7 +20,11 @@
   <title>{{ post.title }} | PythonStacks</title>
 {% endblock title %}
 
+ {% block extra_css %}
+    <style>
 
+    </style>
+  {% endblock extra_css %}
 
 {% block main_content %}
     <!-- Main -->
@@ -36,7 +40,7 @@
 <!--                <span class="text-1 text-style-1 text-outline">Why design</span>-->
 <!--                <span class="text-2 text-style-3 text-italic">matters to <mark class="animated-underline primary">our lives</mark> ?</span>-->
 
-                <span class="text-style-3 mt-5 d-none d-md-block" style="font-size: 42px;">{{ post.title }}</span>
+                <span class="text-style-3 mt-5 d-none d-md-block" style="font-size: 50px;">{{ post.title }}</span>
                 <span class="text-style-3 mt-5 d-md-none" style="font-size: 35px;">{{ post.title }}</span>
 
               </h1>
