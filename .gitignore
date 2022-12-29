@@ -12,3 +12,5 @@ media/
 static/
 !blog/static
 !main/static
+
+main/templates/main/ads/
