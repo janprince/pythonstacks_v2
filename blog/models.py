@@ -31,7 +31,7 @@ class Post(models.Model):
     slug = models.SlugField(unique=True)
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
     image = models.ImageField(upload_to='post_images', blank=True)
-    meta_description = models.TextField(max_length=170, blank=True)
+    meta_description = models.TextField(max_length=200, blank=True)
     content = RichTextUploadingField()
     category = models.ForeignKey(Category, blank=False, related_name='posts', on_delete=models.CASCADE)
     pub_date = models.DateTimeField(default=timezone.now)
