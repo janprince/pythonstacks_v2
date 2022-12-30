@@ -236,7 +236,13 @@
                     </div>
                     {% endfor %}
                   </div>
+
                   <!-- Form -->
+                  {% if new_comment %}
+                    <div class="alert alert-success" role="alert">
+                      Comment pending approval.
+                    </div>
+                  {% else %}
                   <div class="form-area scheme-1 primary">
                     <h3>Leave a reply</h3>
 <!--                    <p>To write a comment you need to <a href="#" target="_blank"><u>login</u></a> to your account.</p>-->
@@ -270,6 +276,7 @@
                       </div>
                     </form>
                   </div>
+                  {% endif %}
                 </div>
               </div>
             </div>

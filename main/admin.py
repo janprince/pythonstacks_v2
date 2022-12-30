@@ -7,4 +7,4 @@ class ContactAdmin(admin.ModelAdmin):
 
 
 # Register your models here.
-admin.site.register(Contact)
+admin.site.register(Contact, ContactAdmin)

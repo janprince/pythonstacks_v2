@@ -118,16 +118,22 @@
                 </div>
                 <!-- Form -->
                 <div class="form-area scheme-1 primary">
-                  <form class="form-fields needs-validation" novalidate="novalidate">
+                  {% if new_contact %}
+                    <div class="alert alert-success" role="alert">
+                      Message Sent! We will get back to you shortly.
+                    </div>
+                  {% else %}
+                  <form class="form-fields needs-validation" novalidate="novalidate" action="{% url 'main:contact' %}" method="post">
+                    {% csrf_token %}
                     <div class="form-row row">
                       <div class="form-col form-floating col-12 col-md-6">
-                        <input type="text" class="form-control" id="InputFloatingName" placeholder="Name" required="required">
+                        <input type="text" name="name" class="form-control" id="InputFloatingName" placeholder="Name" required="required">
                         <label for="InputFloatingName" class="form-label">Name</label>
                         <div class="invalid-feedback">Please enter your name.</div>
                         <div class="valid-feedback">Looks good.</div>
                       </div>
                       <div class="form-col form-floating col-12 col-md-6">
-                        <input type="email" class="form-control" id="InputFloatingEmail" placeholder="name@example.com" required="required">
+                        <input type="email" name="email" class="form-control" id="InputFloatingEmail" placeholder="name@example.com" required="required">
                         <label for="InputFloatingEmail" class="form-label">Email</label>
                         <div class="invalid-feedback">Please enter a valid email address.</div>
                         <div class="valid-feedback">Looks good.</div>
@@ -135,27 +141,19 @@
                     </div>
                     <div class="form-row row">
                       <div class="form-col form-floating col-12">
-                        <textarea class="form-control form-textarea" id="InputFloatingMessage" rows="3" placeholder="Enter your message (optional)."></textarea>
-                        <label for="InputFloatingMessage" class="form-label">Message</label>
-                        <div class="valid-feedback">It's optional, but we'd like to know about it :)</div>
+                        <div class="form-col form-floating">
+                        <input type="text" name="subject" class="form-control" id="InputFloatingSubject" required="required">
+                        <label for="InputFloatingSubject" class="form-label">Subject</label>
+                        <div class="invalid-feedback">Please enter something</div>
+                        <div class="valid-feedback">Looks good.</div>
+                      </div>
                       </div>
                     </div>
                     <div class="form-row row">
-                      <div class="form-col col-12">
-                        <div class="form-check">
-                          <input class="form-check-input form-radio" type="radio" name="InputRadio" id="InputRadioChecked" checked="checked" required="required">
-                          <label class="form-label form-check-label" for="InputRadioChecked">
-                            I found this site by searching the internet.
-                          </label>
-                        </div>
-                      </div>
-                      <div class="form-col col-12">
-                        <div class="form-check">
-                          <input class="form-check-input form-radio primary" type="radio" name="InputRadio" id="InputRadio" required="required">
-                          <label class="form-label form-check-label" for="InputRadio">
-                            A friend recommended this site to me.
-                          </label>
-                        </div>
+                      <div class="form-col form-floating col-12">
+                        <textarea class="form-control form-textarea" name="message" id="InputFloatingMessage" rows="3" placeholder="Enter your message (optional)."></textarea>
+                        <label for="InputFloatingMessage" class="form-label">Message</label>
+                        <div class="valid-feedback">It's optional, but we'd like to know about it :)</div>
                       </div>
                     </div>
                     <div class="form-row row">
@@ -168,6 +166,7 @@
                       </div>
                     </div>
                   </form>
+                  {% endif %}
                 </div>
               </div>
             </div>

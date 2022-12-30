@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from .forms import ContactForm
 
 
 def index(request):
@@ -6,7 +7,20 @@ def index(request):
 
 
 def contact(request):
-    return render(request, "main/contact.html")
+    new_contact = None
+
+    if request.method == 'POST':
+        contact_form = ContactForm(request.POST)
+        if contact_form.is_valid():
+            contact_form.save()
+            new_contact = True
+
+    contact_form = ContactForm()
+    context = {
+        'new_contact': new_contact,
+    }
+
+    return render(request, "main/contact.html", context)
 
 
 def robots(request):
