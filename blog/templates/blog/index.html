@@ -46,7 +46,7 @@
                 <!-- Label -->
                 <span class="label-vertical to-bottom-right-out">
                   <span class="label-line gray"></span>
-                  <span class="label-text gray"><i class="icon fas fa-user-circle"></i> By Alice Johnson</span>
+                  <span class="label-text gray"><i class="icon fas fa-user-circle"></i> {{ post.author.user.get_full_name}}</span>
                 </span>
                 <!-- Image -->
                 <div class="image-wrapper hover-scale">
@@ -70,7 +70,7 @@
                     </a>
                     <a href="#your-link" class="link">
                       <span class="badge outline gray-50 primary-hover">
-                        <span class="badge-text gray white-hover">Artificial</span>
+                        <span class="badge-text gray white-hover">{{ post.category.category }}</span>
                       </span>
                     </a>
                   </div>
