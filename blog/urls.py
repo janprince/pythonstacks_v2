@@ -7,6 +7,7 @@ urlpatterns = [
     path("", views.index, name="index"),
     path("post/<slug:slug>/", views.detail, name="detail"),
     path("category/<slug:category_slug>/", views.category, name='category'),
-    path("search/", views.search, name='search'),
+    path("search/<str:term>", views.search, name='search'),
     path("feed/", PostFeed()),
+
 ]

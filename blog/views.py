@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import *
 from .forms import *
+from django.db.models import Q
 
 
 def index(request):
@@ -45,8 +46,15 @@ def detail(request, slug):
     return render(request, "blog/post.html", context)
 
 
-def search():
-    return None
+def search(request, term):
+    # term = term.lower()
+    query_list = Post.objects.filter(Q(title__icontains=term), featured=True)
+
+    context = {
+        "posts": query_list,
+    }
+
+    return render(request, "blog/index.html", context)
 
 
 def category():

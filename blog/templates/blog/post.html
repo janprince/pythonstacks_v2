@@ -123,30 +123,15 @@
                   <h3>Tags</h3>
                   <div class="tag-cloud">
                     {% for cat in categories %}
-                      <a href="#your-link" class="link">
+                      <a href="{% url 'blog:search' cat.category|lower %}" class="link">
                       <span class="badge outline gray-50 primary-hover">
                         <span class="badge-text gray white-hover">{{ cat.category }}</span>
                       </span>
                     </a>
                     {% endfor %}
-                    <a href="#your-link" class="link">
+                    <a href="{% url 'blog:search' 'machine learning' %}" class="link">
                       <span class="badge outline active gray-50 primary-hover floating-item-smooth">
-                        <span class="badge-text gray white-hover">Branding</span>
-                      </span>
-                    </a>
-                    <a href="#your-link" class="link">
-                      <span class="badge outline gray-50 primary-hover">
-                        <span class="badge-text gray white-hover">Engineering</span>
-                      </span>
-                    </a>
-                    <a href="#your-link" class="link">
-                      <span class="badge outline gray-50 primary-hover">
-                        <span class="badge-text gray white-hover">Innovation</span>
-                      </span>
-                    </a>
-                    <a href="#your-link" class="link">
-                      <span class="badge outline gray-50 primary-hover">
-                        <span class="badge-text gray white-hover">Social</span>
+                        <span class="badge-text gray white-hover">Machine Learning</span>
                       </span>
                     </a>
                   </div>
@@ -272,36 +257,15 @@
                   <h5 class="title">Category Cloud</h5>
                   <div class="tag-cloud">
                     {% for cat in categories %}
-                      <a href="#your-link" class="link">
+                      <a href="{% url 'blog:search' cat.category|lower %}" class="link">
                       <span class="badge outline gray-50 primary-hover">
                         <span class="badge-text gray white-hover">{{ cat.category }}</span>
                       </span>
                     </a>
                     {% endfor %}
-
-                    <a href="#your-link" class="link">
-                      <span class="badge outline gray-50 primary-hover">
-                        <span class="badge-text gray white-hover">Mobile</span>
-                      </span>
-                    </a>
-                    <a href="#your-link" class="link">
-                      <span class="badge outline gray-50 primary-hover">
-                        <span class="badge-text gray white-hover">Design</span>
-                      </span>
-                    </a>
                     <a href="#your-link" class="link">
                       <span class="badge outline active gray-50 primary-hover floating-item-smooth">
                         <span class="badge-text gray white-hover">Branding</span>
-                      </span>
-                    </a>
-                    <a href="#your-link" class="link">
-                      <span class="badge outline gray-50 primary-hover">
-                        <span class="badge-text gray white-hover">Development</span>
-                      </span>
-                    </a>
-                    <a href="#your-link" class="link">
-                      <span class="badge outline gray-50 primary-hover">
-                        <span class="badge-text gray white-hover">Artificial</span>
                       </span>
                     </a>
                   </div>
