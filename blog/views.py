@@ -4,7 +4,7 @@ from .forms import *
 
 
 def index(request):
-    posts = Post.objects.all()
+    posts = Post.objects.filter(featured=True)
 
     context = {
         "posts": posts,
