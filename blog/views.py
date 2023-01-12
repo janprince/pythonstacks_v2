@@ -5,7 +5,7 @@ from django.db.models import Q
 
 
 def index(request):
-    posts = Post.objects.filter(featured=True)
+    posts = Post.objects.filter(featured=True).order_by("-id")
 
     context = {
         "posts": posts,
@@ -16,7 +16,7 @@ def index(request):
 
 def detail(request, slug):
     post = Post.objects.get(slug=slug)
-    posts = Post.objects.filter(featured=True)
+    posts = Post.objects.filter(featured=True).order_by("-likes")
     comments = post.comments.filter(active=True)
     categories = Category.objects.all()
     new_comment = None
